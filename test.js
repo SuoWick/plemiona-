@@ -1,3 +1,1 @@
-javascript:
-
 alert('Alert testowy');
