@@ -37,6 +37,7 @@ javascript:
 // max_unit_number - at most this number of troops of a kind will be send in total
 // conditional_safeguard `- troops to leave in village if possible in total, but if not, they will be send
 
+/*
 var settings = {
 	split_method: 0,
 	max_ressources: '99999',
@@ -85,7 +86,7 @@ var settings_heavy = {
 	max_unit_number: '9999',
 	conditional_safeguard: '0'
 };
-
+*/
 function fill(unit, number) {
 	let field = $(`[name=${unit}]`);
 	number = Number(number);
@@ -360,6 +361,7 @@ else{
 		}
 	}
 }
+
 
 
 
