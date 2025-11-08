@@ -143,7 +143,7 @@ else{
 							i++;
 					if(units_settings[i].max_unit_number > 0){
 						unit = units[i];
-						let field = $(`[name=${unit}]`)
+						let field = $(`[name=${unit}]`);
 						let available = Number(field[0].parentNode.children[1].innerText.match(/\d+/)[0]);
 						
 						if(available > units_settings[i].untouchable)
@@ -249,8 +249,10 @@ else{
 							i++;
 					if(units_settings[i].max_unit_number > 0){ // If user picks this units to send
 						unit = units[i];
-						let field = $(`[name=${unit}]`)
-						let available = Number(field[0].parentNode.children[1].innerText.match(/\d+/)[0]); // Get the troopcount from the 
+						let field = $(`[name=${unit}]`);
+
+						// Get the troopcount from the game
+						let available = Number(field[0].parentNode.children[1].innerText.match(/\d+/)[0]); 
 						
 						// Check if troopcount is higher than untouchable
 						if(available > units_settings[i].untouchable)
@@ -267,10 +269,10 @@ else{
 							available = units_settings[i].max_unit_number;
 						
 						// Write available troops into to_send list  		
-						to_send[i] = available
+						to_send[i] = available;
 							
 						// Translate max_unit_number into capacity_available
-						capacity_available[i] = units_capacity[i] * to_send[i]
+						capacity_available[i] = units_capacity[i] * to_send[i];
 					}
 				}
 
@@ -360,6 +362,7 @@ else{
 		}
 	}
 }
+
 
 
 
