@@ -38,7 +38,7 @@ javascript:
 // conditional_safeguard `- troops to leave in village if possible in total, but if not, they will be send
 
 var settings = {
-	split_method: '0',
+	split_method: 0,
 	max_ressources: '99999',
 	archers: '1',
 	skip_level_1: '0'
@@ -360,6 +360,7 @@ else{
 		}
 	}
 }
+
 
 
 
