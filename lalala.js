@@ -27,7 +27,7 @@ javascript:
 
 // SETTINGS
 // split_method - 0 for same times for each level, 1 for more income but non-same traveling times
-// too small max_resources might mess with method '1'.
+// too small max_ressources might mess with method '1'.
 //
 // max_ressources - max amount of resources to gather from one level (rounding may cause some reduction)
 // archers - is the world with archers (1 - yes, 0 - no)
@@ -37,8 +37,9 @@ javascript:
 // max_unit_number - at most this number of troops of a kind will be send in total
 // conditional_safeguard `- troops to leave in village if possible in total, but if not, they will be send
 
+/*
 var settings = {
-	split_method: '0',
+	split_method: 0,
 	max_ressources: '99999',
 	archers: '1',
 	skip_level_1: '0'
@@ -85,6 +86,7 @@ var settings_heavy = {
 	max_unit_number: '9999',
 	conditional_safeguard: '0'
 };
+*/
 
 function fill(unit, number) {
 	let field = $(`[name=${unit}]`);
@@ -363,6 +365,7 @@ else{
 		}
 	}
 }
+
 
 
 
