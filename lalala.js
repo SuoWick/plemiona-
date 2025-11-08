@@ -135,7 +135,7 @@ else{
 		if(unlocked_levels.length > 1 && free_levels == 1 && settings.skip_level_1 == 1)
 			alert('Ustawiono pominięcie 1 poziomu zbieractwa');
 		else{
-			if (split_method == 0){
+			if (split_method == '0'){
 				// Original code part and method by PabloCanaletto
 				let unit;
 				for(var i = 0; i<7; i++){
@@ -239,7 +239,7 @@ else{
 				}
 				
 			
-			} else if (split_method == 1){				
+			} else if (split_method == '1'){				
 				var capacity_available = [0,0,0,0,0,0,0];
 				var ratio_per_level    = [0,0,0,0];
 				for(var i = 0; i<7; i++){ 
@@ -361,6 +361,7 @@ else{
 		}
 	}
 }
+
 
 
 
