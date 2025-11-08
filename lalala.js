@@ -11,15 +11,15 @@ javascript:
 //				1. worlds without archers
 //				2. max_ressources setting
 //				3. skip_level_1 setting
-//      3.0 - xx.xx.2025 by Wicker
-//          added an option to send teams to maximize resource income
-//          teams are no longer same times for each level
-//          instead level 2-4 (3-4 if level 1 skipped) timers are 
-//          timer for level 1 (2 if 1 skipped) but multiplied by integer
+//  	3.0 - xx.xx.2025 by Wicker
+//  		added an option to send teams to maximize resource income
+//			teams are no longer same times for each level
+//			instead level 2-4 (3-4 if level 1 skipped) timers are 
+//			timer for level 1 (2 if 1 skipped) but multiplied by integer
 //					
-// PabloCanaletto disclaimer: You are free to use this script in any way you like and to submit changes.
-//				I would only appreciate you to leave notification about my orginal authorship untouched
-//				with the whole history of changes.
+// PabloCanaletto disclaimer: 	You are free to use this script in any way you like and to submit changes.
+//								I would only appreciate you to leave notification about my orginal authorship untouched
+//								with the whole history of changes.
 
 // FUNCTIONALITY
 // This script fills forms in scavenge tab. It selects troops to send on consecutive levels in a way,
@@ -37,7 +37,6 @@ javascript:
 // max_unit_number - at most this number of troops of a kind will be send in total
 // conditional_safeguard `- troops to leave in village if possible in total, but if not, they will be send
 
-/*
 var settings = {
 	split_method: 0,
 	max_ressources: '99999',
@@ -86,7 +85,7 @@ var settings_heavy = {
 	max_unit_number: '9999',
 	conditional_safeguard: '0'
 };
-*/
+
 function fill(unit, number) {
 	let field = $(`[name=${unit}]`);
 	number = Number(number);
@@ -135,7 +134,7 @@ else{
 		if(unlocked_levels.length > 1 && free_levels == 1 && settings.skip_level_1 == 1)
 			alert('Ustawiono pominięcie 1 poziomu zbieractwa');
 		else{
-			if (split_method == '0'){
+			if (split_method == 0){
 				// Original code part and method by PabloCanaletto
 				let unit;
 				for(var i = 0; i<7; i++){
@@ -239,7 +238,7 @@ else{
 				}
 				
 			
-			} else if (split_method == '1'){				
+			} else if (split_method == 1){				
 				var capacity_available = [0,0,0,0,0,0,0];
 				var ratio_per_level    = [0,0,0,0];
 				for(var i = 0; i<7; i++){ 
@@ -277,7 +276,7 @@ else{
 
 				const total_capacity_available = capacity_available.reduce((partialSum, a) => partialSum + a, 0);
 
-				var ratio_per_level    = [0,0,0,0];
+				var ratio_per_level  = [0,0,0,0];
 
 				const capacity_to_ratio_step = 1000;
 				const capacity_to_ratio_list = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000,19000,20000,21000,22000,23000,24000,25000,26000,27000,28000,29000,30000,31000,32000,33000,34000,35000,36000,37000,38000,39000,40000,41000,42000,43000,44000,45000,46000,47000,48000,49000,50000,51000,52000,53000,54000,55000,56000,57000,58000,59000,60000,61000,62000,63000,64000,65000,66000,67000,68000,69000,70000,71000,72000,73000,74000,75000,76000,77000,78000,79000,80000,81000,82000,83000,84000,85000,86000,87000,88000,89000,90000,91000,92000,93000,94000,95000,96000,97000,98000,99000,100000,101000,102000,103000,104000,105000,106000,107000,108000,109000,110000,111000,112000,113000,114000,115000,116000,117000,118000,119000,120000,121000,122000,123000,124000,125000,126000,127000,128000,129000,130000,131000,132000,133000,134000,135000,136000,137000,138000,139000,140000,141000,142000,143000,144000,145000,146000,147000,148000,149000,150000,151000,152000,153000,154000,155000,156000,157000,158000,159000,160000,161000,162000,163000,164000,165000,166000,167000,168000,169000,170000,171000,172000,173000,174000,175000,176000,177000,178000,179000,180000,181000,182000,183000,184000,185000,186000,187000,188000,189000,190000,191000,192000,193000,194000,195000,196000,197000,198000,199000,200000,201000,202000,203000,204000,205000,206000,207000,208000,209000,210000,211000,212000,213000,214000,215000,216000,217000,218000,219000,220000,221000,222000,223000,224000,225000,226000,227000,228000,229000,230000,231000,232000,233000,234000,235000,236000,237000,238000,239000,240000,241000,242000,243000,244000,245000,246000,247000,248000,249000,250000,251000,252000,253000,254000,255000,256000,257000,258000,259000,260000,261000,262000,263000,264000,265000,266000,267000,268000,269000,270000,271000,272000,273000,274000,275000,276000,277000,278000,279000,280000,281000,282000,283000,284000,285000,286000,287000,288000,289000,290000,291000,292000,293000,294000,295000,296000,297000,298000,299000,300000,301000,302000,303000,304000,305000,306000,307000,308000,309000,310000,311000,312000,313000,314000,315000,316000,317000,318000,319000,320000,321000,322000,323000,324000,325000,326000,327000,328000,329000,330000,331000,332000,333000,334000,335000,336000,337000,338000,339000,340000,341000,342000,343000,344000,345000,346000,347000,348000,349000,350000];
@@ -317,26 +316,26 @@ else{
 
 				// Normalize the ratio over the levels available 
 				const ratio_normalizer = ratio_per_level.reduce((partialSum, a) => partialSum + a, 0);
-				ratio_per_level[0] /= ratio_normalizer
-				ratio_per_level[1] /= ratio_normalizer
-				ratio_per_level[2] /= ratio_normalizer
-				ratio_per_level[3] /= ratio_normalizer
+				ratio_per_level[0] /= ratio_normalizer;
+				ratio_per_level[1] /= ratio_normalizer;
+				ratio_per_level[2] /= ratio_normalizer;
+				ratio_per_level[3] /= ratio_normalizer;
 
 				for(var i = 0; i<7; i++){
 					if(free_levels >= 1 && settings.skip_level_1 == 0){
-						to_send[i] = to_send[i]*ratio_per_level[0]
+						to_send[i] = to_send[i]*ratio_per_level[0];
 						settings.max_ressources *= 10;
 					}
 					if(free_levels >= 2){
-						to_send[i] = to_send[i]*ratio_per_level[1]
+						to_send[i] = to_send[i]*ratio_per_level[1];
 						settings.max_ressources *= 4;
 					}
 					if(free_levels >= 3){
-						to_send[i] = to_send[i]*ratio_per_level[2]
+						to_send[i] = to_send[i]*ratio_per_level[2];
 						settings.max_ressources *= 2;
 					}
 					if(free_levels ==4){
-						to_send[i] = to_send[i]*ratio_per_level[3]
+						to_send[i] = to_send[i]*ratio_per_level[3];
 						settings.max_ressources *= 1.3333;
 					}
 					if(capacity_available[i] > settings.max_ressources){
@@ -361,9 +360,6 @@ else{
 		}
 	}
 }
-
-
-
 
 
 
